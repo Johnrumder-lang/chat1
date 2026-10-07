@@ -11,7 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
 parser.add_argument('--api-dump',type=Path,help='Optional Roblox API-Dump.json for current class/property checks')
 args=parser.parse_args()
-tree=ET.parse(ROOT/'dist/Northbound.rbxlx').getroot()
+tree=ET.parse(ROOT/'Northbound.rbxlx').getroot()
+assert (ROOT/'Northbound.rbxlx').read_bytes()==(ROOT/'dist/Northbound.rbxlx').read_bytes(),'Compatibility copy differs'
 items=list(tree.iter('Item'))
 refs={item.attrib['referent']:item for item in items}
 assert len(refs)==len(items),'Duplicate referent'
@@ -81,7 +82,7 @@ for folder in ('shared','server','client'):
         assert expected in embedded,f'Outdated source embedded: {source.name}'
         script_count+=1
 assert script_count==8
-assert 'rbxassetid://' not in (ROOT/'dist/Northbound.rbxlx').read_text(),'Unexpected uploaded asset dependency'
+assert 'rbxassetid://' not in (ROOT/'Northbound.rbxlx').read_text(),'Unexpected uploaded asset dependency'
 print(f'PASS: {len(items)} XML instances and all refs; 450-part connected car; joint rest frames; R6; headlights; {script_count} exact embedded scripts')
 
 if args.api_dump:

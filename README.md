@@ -2,13 +2,13 @@
 
 An atmospheric R6 first-person road trip for Roblox: an original 1994 Aster touring wagon, independent suspension, and an endlessly generated alpine route.
 
-**Download:** [Northbound.rbxlx](https://github.com/Johnrumder-lang/chat1/raw/refs/heads/main/dist/Northbound.rbxlx) · [Complete project ZIP](https://github.com/Johnrumder-lang/chat1/raw/refs/heads/main/dist/Northbound-project.zip)
+**Download:** [Northbound.rbxlx](https://github.com/Johnrumder-lang/chat1/raw/refs/heads/main/Northbound.rbxlx) · [Game file ZIP](https://github.com/Johnrumder-lang/chat1/raw/refs/heads/main/Northbound-download.zip) · [Complete project ZIP](https://github.com/Johnrumder-lang/chat1/raw/refs/heads/main/dist/Northbound-project.zip)
 
-The Roblox place is in **`dist/Northbound.rbxlx`**. On its GitHub file page, use **Download raw file** to save it, then open it in Roblox Studio.
+The Roblox place is **`Northbound.rbxlx`**, directly in the main repository folder. GitHub previews `.rbxlx` files as XML; that is Roblox's place-file format. Use **Download raw file** on the file page. If your browser displays XML instead of saving it, download **Game file ZIP**, extract `Northbound.rbxlx`, and open that file in Roblox Studio.
 
 ## Open the game
 
-1. Open **`dist/Northbound.rbxlx`** in Roblox Studio with **File → Open from File**.
+1. Open **`Northbound.rbxlx`** in Roblox Studio with **File → Open from File**.
 2. Press **Play / F5**, wait for the opening road to generate and stream, then choose **Begin journey**.
 3. Use a high graphics setting for the intended shadows, glass, terrain water and clouds. Studio may migrate Future lighting to its current equivalent.
 

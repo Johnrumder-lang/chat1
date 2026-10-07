@@ -5,9 +5,10 @@ import json
 import math
 import pathlib
 import xml.etree.ElementTree as ET
+import zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-OUT = ROOT / 'dist' / 'Northbound.rbxlx'
+OUT = ROOT / 'Northbound.rbxlx'
 
 
 class Place:
@@ -309,8 +310,13 @@ def main():
     OUT.parent.mkdir(parents=True,exist_ok=True)
     ET.indent(p.xml,space='  ')
     ET.ElementTree(p.xml).write(OUT,encoding='utf-8',xml_declaration=True)
+    # Keep the original download path working and offer an attachment browsers save.
+    (ROOT/'dist').mkdir(parents=True,exist_ok=True)
+    (ROOT/'dist/Northbound.rbxlx').write_bytes(OUT.read_bytes())
+    with zipfile.ZipFile(ROOT/'Northbound-download.zip','w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+        archive.write(OUT,'Northbound.rbxlx')
     print(f'Built {OUT.name}: {p.count} instances, {len(scripts)} scripts, {OUT.stat().st_size:,} bytes')
-    (ROOT/'dist/manifest.json').write_text(json.dumps({'place':OUT.name,'instances':p.count,'scripts':scripts,'carParts':len(spec['parts']),'externalAssetIds':[]},indent=2)+'\n')
+    (ROOT/'dist/manifest.json').write_text(json.dumps({'place':'../'+OUT.name,'download':'../Northbound-download.zip','instances':p.count,'scripts':scripts,'carParts':len(spec['parts']),'externalAssetIds':[]},indent=2)+'\n')
 
 
 if __name__=='__main__': main()

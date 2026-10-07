@@ -1,5 +1,6 @@
 {
-  "place": "Northbound.rbxlx",
+  "place": "../Northbound.rbxlx",
+  "download": "../Northbound-download.zip",
   "instances": 2185,
   "scripts": [
     "src/shared/Route.lua",

@@ -1,6 +1,6 @@
 # Studio playtest
 
-Open `dist/Northbound.rbxlx`, open **View → Output**, and use **Play (F5)** rather than Run so the player, camera, controls and GUI initialize.
+Open `Northbound.rbxlx` from the repository's main folder, open **View → Output**, and use **Play (F5)** rather than Run so the player, camera, controls and GUI initialize.
 
 1. The edit-mode scene should show the sage Aster wagon. In Play, the loading menu should remain until terrain and the local supporting road are available. The wagon remains anchored until Begin journey.
 2. Begin. Confirm the character is R6, the camera sits inside the cabin, and the car settles evenly on all four tyres without a sustained bounce. Test acceleration, braking to a halt, reverse, low-speed full-lock steering and high-speed steering.
