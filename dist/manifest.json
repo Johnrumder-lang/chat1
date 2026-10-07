@@ -1,0 +1,16 @@
+{
+  "place": "Northbound.rbxlx",
+  "instances": 2185,
+  "scripts": [
+    "src/shared/Route.lua",
+    "src/shared/VehiclePhysics.lua",
+    "src/server/Main.server.lua",
+    "src/server/Weather.lua",
+    "src/server/World.lua",
+    "src/client/Atmosphere.lua",
+    "src/client/Interface.lua",
+    "src/client/Main.client.lua"
+  ],
+  "carParts": 450,
+  "externalAssetIds": []
+}
